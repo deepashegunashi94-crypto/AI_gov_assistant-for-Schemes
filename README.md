@@ -25,53 +25,18 @@ The system uses **Generative AI, Retrieval-Augmented Generation (RAG), semantic 
 - 📊 Structured government scheme dataset
 - 🌐 Flask-based web application
 🛠️ Technologies Used
-Python
-Flask
-Generative AI
-Groq LLM
-RAG (Retrieval-Augmented Generation)
-LangChain concepts
-Sentence Transformers
-FAISS
-REST APIs
-JSON
-HTML/CSS
-Git & GitHub
-gov_assistant/
-│
-├── app/
-│   ├── __init__.py
-│   ├── routes.py
-│   │
-│   ├── rag/
-│   │   ├── build_rag.py
-│   │   ├── documents.py
-│   │   ├── embeddings.py
-│   │   ├── enrich_schemes.py
-│   │   ├── prepare_documents.py
-│   │   ├── scraper.py
-│   │   └── search.py
-│   │
-│   └── templates/
-│       └── index.html
-│
-├── data/
-│   └── schemes/
-│       ├── all_schemes.json
-│       ├── balanced_schemes.json
-│       ├── cleaned_schemes.json
-│       ├── enriched_schemes.json
-│       └── rag_documents.json
-│
-├── vectorstore/
-│   ├── metadata.json
-│   └── schemes.index
-│
-├── config.py
-├── requirements.txt
-├── run.py
-├── README.md
-└── .gitignore
+-Python
+-Flask
+-Generative AI
+-Groq LLM
+-RAG (Retrieval-Augmented Generation)
+-LangChain concepts
+-Sentence Transformers
+-FAISS
+-REST APIs
+-JSON
+-HTML/CSS
+-Git & GitHub
 
 🔍 How the RAG System Works
 
