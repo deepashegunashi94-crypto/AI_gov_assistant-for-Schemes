@@ -1,0 +1,2570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Government Scheme Assistant
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef5ff 0%,
+                    #f8fbff 45%,
+                    #eefaf6 100%
+                );
+
+            color: #1f2937;
+            min-height: 100vh;
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .app-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 25px;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            box-shadow:
+                0 8px 30px rgba(15, 23, 42, 0.08);
+
+            margin-bottom: 22px;
+        }
+
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .brand-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #0f766e
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 26px;
+        }
+
+
+        .brand h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+
+        .brand p {
+            margin-top: 4px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+
+        .clear-btn {
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #4b5563;
+
+            padding: 10px 16px;
+            border-radius: 10px;
+
+            cursor: pointer;
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        .clear-btn:hover {
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+
+        /* =====================================================
+           LAYOUT
+        ===================================================== */
+
+        .main-layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+
+        .panel {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+
+            box-shadow:
+                0 6px 24px rgba(15, 23, 42, 0.07);
+        }
+
+
+        .panel-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+
+        .panel-description {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+
+        /* =====================================================
+           QUICK ACTIONS
+        ===================================================== */
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+
+
+        .quick-btn {
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+
+            border-radius: 10px;
+            padding: 11px 8px;
+
+            font-size: 13px;
+            color: #374151;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .quick-btn:hover {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+            color: #1d4ed8;
+        }
+
+
+        /* =====================================================
+           PROFILE FORM
+        ===================================================== */
+
+        .profile-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+
+        .form-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+
+            padding: 10px 11px;
+
+            border:
+                1px solid #d1d5db;
+
+            border-radius: 9px;
+
+            background: white;
+
+            font-size: 13px;
+            color: #111827;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(37, 99, 235, 0.08);
+        }
+
+
+        .find-btn {
+            margin-top: 4px;
+
+            border: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #0f766e
+                );
+
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        .find-btn:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 7px 18px
+                rgba(37, 99, 235, 0.22);
+        }
+
+
+        /* =====================================================
+           CHAT PANEL
+        ===================================================== */
+
+        .chat-panel {
+            background: white;
+            border-radius: 20px;
+
+            min-height: 760px;
+
+            display: flex;
+            flex-direction: column;
+
+            box-shadow:
+                0 8px 30px rgba(15, 23, 42, 0.08);
+
+            overflow: hidden;
+        }
+
+
+        .chat-header {
+            padding: 20px 24px;
+
+            border-bottom:
+                1px solid #eef0f3;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .chat-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .online-dot {
+            width: 10px;
+            height: 10px;
+
+            background: #22c55e;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(34, 197, 94, 0.12);
+        }
+
+
+        .chat-title h2 {
+            font-size: 17px;
+            color: #111827;
+        }
+
+
+        .chat-title span {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+
+        /* =====================================================
+           CHAT MESSAGES
+        ===================================================== */
+
+        .chat-box {
+            flex: 1;
+
+            padding: 24px;
+
+            overflow-y: auto;
+
+            min-height: 580px;
+            max-height: 850px;
+
+            scroll-behavior: smooth;
+        }
+
+
+        .welcome-message {
+            max-width: 760px;
+            margin: 20px auto;
+
+            text-align: center;
+
+            padding: 28px;
+        }
+
+
+        .welcome-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dbeafe,
+                    #d1fae5
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 34px;
+        }
+
+
+        .welcome-message h2 {
+            font-size: 24px;
+            color: #111827;
+            margin-bottom: 9px;
+        }
+
+
+        .welcome-message p {
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           USER MESSAGE
+        ===================================================== */
+
+        .message {
+            margin-bottom: 20px;
+        }
+
+
+        .user-message {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+        .user-bubble {
+            max-width: 75%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: white;
+
+            padding: 12px 16px;
+
+            border-radius:
+                16px 16px 4px 16px;
+
+            line-height: 1.5;
+            font-size: 14px;
+
+            box-shadow:
+                0 4px 12px
+                rgba(37, 99, 235, 0.15);
+        }
+
+
+        /* =====================================================
+           ASSISTANT MESSAGE
+        ===================================================== */
+
+        .assistant-message {
+            width: 100%;
+        }
+
+
+        .assistant-text {
+            background: #f8fafc;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius:
+                14px 14px 14px 4px;
+
+            padding: 15px 17px;
+
+            line-height: 1.65;
+
+            font-size: 14px;
+
+            color: #374151;
+
+            max-width: 850px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =====================================================
+           TYPING INDICATOR
+        ===================================================== */
+
+        .typing {
+            display: none;
+
+            align-items: center;
+            gap: 5px;
+
+            color: #9ca3af;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+
+            background: #9ca3af;
+
+            border-radius: 50%;
+
+            animation:
+                typingAnimation 1.2s infinite;
+        }
+
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+
+        @keyframes typingAnimation {
+
+            0%,
+            60%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            30% {
+                transform: translateY(-4px);
+                opacity: 1;
+            }
+        }
+
+
+        /* =====================================================
+           SCHEME RESULTS
+        ===================================================== */
+
+        .scheme-results {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            max-width: 100%;
+        }
+
+
+        .scheme-card {
+            background: white;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 18px
+                rgba(15, 23, 42, 0.06);
+
+            transition: 0.2s;
+        }
+
+
+        .scheme-card:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(15, 23, 42, 0.09);
+        }
+
+
+        .scheme-header {
+            padding: 19px 20px;
+
+            border-bottom:
+                1px solid #eef0f3;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f9fbff
+                );
+        }
+
+
+        .scheme-header h3 {
+            font-size: 18px;
+
+            line-height: 1.4;
+
+            color: #111827;
+
+            margin-bottom: 10px;
+        }
+
+
+        .scheme-meta {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .scheme-meta span {
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            background: #f3f4f6;
+
+            color: #4b5563;
+
+            font-size: 11px;
+
+            line-height: 1.3;
+        }
+
+
+        .scheme-section {
+            padding: 17px 20px;
+
+            border-bottom:
+                1px solid #f0f1f3;
+        }
+
+
+        .scheme-section:last-of-type {
+            border-bottom: none;
+        }
+
+
+        .scheme-section h4 {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #111827;
+
+            margin-bottom: 8px;
+        }
+
+
+        .scheme-section p,
+        .scheme-content {
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            color: #5b6472;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        .scheme-content br {
+            line-height: 1.8;
+        }
+
+
+        .scheme-footer {
+            padding: 15px 20px;
+
+            background: #fafafa;
+
+            display: flex;
+
+            justify-content: flex-end;
+        }
+
+
+        .official-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 9px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: 0.2s;
+        }
+
+
+        .official-button:hover {
+            background: #1e40af;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =====================================================
+           CHAT INPUT
+        ===================================================== */
+
+        .chat-input-area {
+            padding: 17px 20px;
+
+            border-top:
+                1px solid #eef0f3;
+
+            background: white;
+        }
+
+
+        .input-wrapper {
+            display: flex;
+
+            align-items: flex-end;
+
+            gap: 9px;
+
+            border:
+                1px solid #d1d5db;
+
+            border-radius: 13px;
+
+            padding: 7px 8px 7px 13px;
+
+            background: white;
+
+            transition: 0.2s;
+        }
+
+
+        .input-wrapper:focus-within {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(37, 99, 235, 0.08);
+        }
+
+
+        #messageInput {
+            flex: 1;
+
+            resize: none;
+
+            border: none;
+
+            outline: none;
+
+            min-height: 42px;
+            max-height: 120px;
+
+            padding: 10px 2px;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            color: #111827;
+
+            background: transparent;
+        }
+
+
+        #messageInput::placeholder {
+            color: #9ca3af;
+        }
+
+
+        .input-button {
+            width: 39px;
+            height: 39px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #f3f4f6;
+
+            color: #4b5563;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 17px;
+
+            transition: 0.2s;
+        }
+
+
+        .input-button:hover {
+            background: #e5e7eb;
+        }
+
+
+        .send-button {
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1d4ed8
+                );
+
+            color: white;
+        }
+
+
+        .send-button:hover {
+            background: #1e40af;
+        }
+
+
+        .voice-active {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+
+        .input-note {
+            font-size: 11px;
+
+            color: #9ca3af;
+
+            margin-top: 7px;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           EMPTY / ERROR
+        ===================================================== */
+
+        .no-results {
+            background: #f8fafc;
+
+            border:
+                1px solid #e5e7eb;
+
+            border-radius: 12px;
+
+            padding: 18px;
+
+            color: #6b7280;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .chat-panel {
+                min-height: 700px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .app-container {
+                padding: 12px;
+            }
+
+
+            .header {
+                padding: 16px;
+            }
+
+
+            .brand h1 {
+                font-size: 19px;
+            }
+
+
+            .brand p {
+                display: none;
+            }
+
+
+            .sidebar {
+                display: flex;
+            }
+
+
+            .quick-actions {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .chat-box {
+                padding: 15px;
+            }
+
+
+            .assistant-text {
+                max-width: 100%;
+            }
+
+
+            .user-bubble {
+                max-width: 90%;
+            }
+
+
+            .scheme-header,
+            .scheme-section,
+            .scheme-footer {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🏛️
+            </div>
+
+            <div>
+
+                <h1>
+                    Government Scheme Assistant
+                </h1>
+
+                <p>
+                    Find government schemes, scholarships,
+                    jobs and welfare programs
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="clear-btn"
+            id="clearChatBtn"
+            type="button"
+        >
+            Clear Chat
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN LAYOUT
+    ====================================================== -->
+
+    <main class="main-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- =============================================
+                 QUICK ACTIONS
+            ============================================== -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Explore
+                </div>
+
+                <p class="panel-description">
+                    Start with a common requirement or
+                    type your own question in the chatbot.
+                </p>
+
+
+                <div class="quick-actions">
+
+                    <button
+                        class="quick-btn"
+                        type="button"
+                        data-query="scholarships for college students"
+                    >
+                        🎓 Scholarships
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        type="button"
+                        data-query="government schemes for women"
+                    >
+                        👩 Women
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        type="button"
+                        data-query="government jobs and employment schemes"
+                    >
+                        💼 Government Jobs
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        type="button"
+                        data-query="government schemes for farmers"
+                    >
+                        🌾 Farmers
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        type="button"
+                        data-query="government health schemes"
+                    >
+                        🏥 Health
+                    </button>
+
+
+                    <button
+                        class="quick-btn"
+                        type="button"
+                        data-query="government schemes for students"
+                    >
+                        📚 Students
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 FIND SCHEMES FOR ME
+            ============================================== -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Find Schemes for Me
+                </div>
+
+                <p class="panel-description">
+                    Enter any details you want. The assistant
+                    will use only the information you provide
+                    to find potentially relevant schemes.
+                </p>
+
+
+                <form
+                    class="profile-form"
+                    id="profileForm"
+                >
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group">
+
+                        <label for="state">
+                            State
+                        </label>
+
+                        <input
+                            type="text"
+                            id="state"
+                            name="state"
+                            placeholder="e.g. Karnataka"
+                        >
+
+                    </div>
+
+
+
+                    <!-- EDUCATION -->
+
+                    <div class="form-group">
+
+                        <label for="education">
+                            Education
+                        </label>
+
+                        <input
+                            type="text"
+                            id="education"
+                            name="education"
+                            placeholder="e.g. B.E, 12th, MBA"
+                        >
+
+                    </div>
+
+
+
+                    <!-- OCCUPATION -->
+
+                    <div class="form-group">
+
+                        <label for="occupation">
+                            Occupation
+                        </label>
+
+                        <input
+                            type="text"
+                            id="occupation"
+                            name="occupation"
+                            placeholder="e.g. Student, Farmer"
+                        >
+
+                    </div>
+
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="General">
+                                General
+                            </option>
+
+                            <option value="SC">
+                                SC
+                            </option>
+
+                            <option value="ST">
+                                ST
+                            </option>
+
+                            <option value="OBC">
+                                OBC
+                            </option>
+
+                            <option value="Minority">
+                                Minority
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- INCOME -->
+
+                    <div class="form-group">
+
+                        <label for="income">
+                            Annual Family Income
+                        </label>
+
+                        <input
+                            type="number"
+                            id="income"
+                            name="income"
+                            min="0"
+                            placeholder="e.g. 250000"
+                        >
+
+                    </div>
+
+
+
+                    <!-- AGE -->
+
+                    <div class="form-group">
+
+                        <label for="age">
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            min="0"
+                            max="120"
+                            placeholder="e.g. 21"
+                        >
+
+                    </div>
+
+
+
+                    <button
+                        class="find-btn"
+                        type="submit"
+                    >
+                        🔎 Find Schemes
+                    </button>
+
+                </form>
+
+            </section>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CHAT
+        ================================================== -->
+
+        <section class="chat-panel">
+
+
+            <!-- =============================================
+                 CHAT HEADER
+            ============================================== -->
+
+            <div class="chat-header">
+
+                <div class="chat-title">
+
+                    <div class="online-dot"></div>
+
+                    <div>
+
+                        <h2>
+                            Government Assistant
+                        </h2>
+
+                        <span>
+                            AI-powered scheme search
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CHAT BOX
+            ============================================== -->
+
+            <div
+                class="chat-box"
+                id="chatBox"
+            >
+
+
+                <!-- =========================================
+                     WELCOME
+                ========================================== -->
+
+                <div
+                    class="welcome-message"
+                    id="welcomeMessage"
+                >
+
+                    <div class="welcome-icon">
+                        🤖
+                    </div>
+
+                    <h2>
+                        How can I help you?
+                    </h2>
+
+                    <p>
+                        Ask me about government scholarships,
+                        jobs, welfare schemes, farmer support,
+                        women welfare, health schemes and
+                        other government programs.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     TYPING INDICATOR
+                ========================================== -->
+
+                <div
+                    class="typing"
+                    id="typingIndicator"
+                >
+
+                    <span>
+                        Assistant is searching
+                    </span>
+
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 INPUT
+            ============================================== -->
+
+            <div class="chat-input-area">
+
+                <div class="input-wrapper">
+
+
+                    <textarea
+                        id="messageInput"
+                        rows="1"
+                        placeholder="Ask about government schemes..."
+                    ></textarea>
+
+
+                    <button
+                        type="button"
+                        class="input-button"
+                        id="voiceBtn"
+                        title="Voice input"
+                    >
+                        🎤
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="input-button send-button"
+                        id="sendBtn"
+                        title="Send"
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+
+                <div class="input-note">
+                    Information is provided for guidance.
+                    Always verify eligibility and application
+                    details on the official government website.
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+/* ============================================================
+   ELEMENTS
+============================================================ */
+
+const chatBox =
+    document.getElementById("chatBox");
+
+const messageInput =
+    document.getElementById("messageInput");
+
+const sendBtn =
+    document.getElementById("sendBtn");
+
+const voiceBtn =
+    document.getElementById("voiceBtn");
+
+const profileForm =
+    document.getElementById("profileForm");
+
+const clearChatBtn =
+    document.getElementById("clearChatBtn");
+
+const typingIndicator =
+    document.getElementById("typingIndicator");
+
+const welcomeMessage =
+    document.getElementById("welcomeMessage");
+
+
+
+/* ============================================================
+   ESCAPE HTML
+============================================================ */
+
+function escapeHTML(value) {
+
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
+
+
+    const div =
+        document.createElement("div");
+
+
+    div.textContent =
+        String(value);
+
+
+    return div.innerHTML;
+}
+
+
+
+/* ============================================================
+   FORMAT TEXT
+============================================================ */
+
+function formatText(value) {
+
+    if (!value) {
+        return "";
+    }
+
+
+    return escapeHTML(value)
+        .replace(/\n/g, "<br>");
+}
+
+
+
+/* ============================================================
+   USER MESSAGE
+============================================================ */
+
+function addUserMessage(message) {
+
+    hideWelcome();
+
+
+    const wrapper =
+        document.createElement("div");
+
+
+    wrapper.className =
+        "message user-message";
+
+
+    wrapper.innerHTML = `
+        <div class="user-bubble">
+            ${formatText(message)}
+        </div>
+    `;
+
+
+    chatBox.appendChild(wrapper);
+
+
+    scrollToBottom();
+}
+
+
+
+/* ============================================================
+   ASSISTANT MESSAGE
+============================================================ */
+
+function addAssistantMessage(
+    reply,
+    items = []
+) {
+
+    hideWelcome();
+
+
+    const wrapper =
+        document.createElement("div");
+
+
+    wrapper.className =
+        "message assistant-message";
+
+
+    const safeReply =
+        formatText(reply);
+
+
+    let cardsHTML = "";
+
+
+    if (
+        Array.isArray(items) &&
+        items.length > 0
+    ) {
+
+        cardsHTML =
+            renderSchemeResults(items);
+
+    }
+
+
+    wrapper.innerHTML = `
+
+        ${
+            safeReply
+            ? `
+                <div class="assistant-text">
+                    ${safeReply}
+                </div>
+              `
+            : ""
+        }
+
+        ${cardsHTML}
+
+    `;
+
+
+    chatBox.appendChild(wrapper);
+
+
+    scrollToBottom();
+}
+
+
+
+/* ============================================================
+   SCHEME CARD
+============================================================ */
+
+function renderSchemeCard(item) {
+
+    const schemeName =
+        escapeHTML(
+            item.schemeName ||
+            "Government Scheme"
+        );
+
+
+    const state =
+        escapeHTML(
+            item.state ||
+            "All"
+        );
+
+
+    const category =
+        escapeHTML(
+            item.category ||
+            "Government Scheme"
+        );
+
+
+    const description =
+        formatText(
+            item.description
+        );
+
+
+    const eligibility =
+        formatText(
+            item.eligibility
+        );
+
+
+    const benefits =
+        formatText(
+            item.benefits
+        );
+
+
+    const application =
+        formatText(
+            item.application
+        );
+
+
+    const documents =
+        formatText(
+            item.documents
+        );
+
+
+    let officialLink =
+        item.official_link ||
+        "https://www.myscheme.gov.in/";
+
+
+    /*
+     * Only allow http/https links.
+     * This prevents accidental javascript: URLs.
+     */
+
+    if (
+        !/^https?:\/\//i.test(
+            officialLink
+        )
+    ) {
+
+        officialLink =
+            "https://www.myscheme.gov.in/";
+
+    }
+
+
+    const safeOfficialLink =
+        escapeHTML(
+            officialLink
+        );
+
+
+    return `
+
+        <article class="scheme-card">
+
+
+            <!-- =========================================
+                 SCHEME HEADER
+            ========================================== -->
+
+            <div class="scheme-header">
+
+                <h3>
+                    ${schemeName}
+                </h3>
+
+
+                <div class="scheme-meta">
+
+                    <span>
+                        📍 ${state}
+                    </span>
+
+
+                    <span>
+                        ${category}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 DESCRIPTION
+            ========================================== -->
+
+            ${
+                description
+                ? `
+
+                    <div class="scheme-section">
+
+                        <h4>
+                            Description
+                        </h4>
+
+                        <p>
+                            ${description}
+                        </p>
+
+                    </div>
+
+                  `
+                : ""
+            }
+
+
+
+            <!-- =========================================
+                 ELIGIBILITY
+            ========================================== -->
+
+            ${
+                eligibility
+                ? `
+
+                    <div class="scheme-section">
+
+                        <h4>
+                            Eligibility
+                        </h4>
+
+                        <div class="scheme-content">
+                            ${eligibility}
+                        </div>
+
+                    </div>
+
+                  `
+                : ""
+            }
+
+
+
+            <!-- =========================================
+                 BENEFITS
+            ========================================== -->
+
+            ${
+                benefits
+                ? `
+
+                    <div class="scheme-section">
+
+                        <h4>
+                            Benefits
+                        </h4>
+
+                        <div class="scheme-content">
+                            ${benefits}
+                        </div>
+
+                    </div>
+
+                  `
+                : ""
+            }
+
+
+
+            <!-- =========================================
+                 APPLICATION
+            ========================================== -->
+
+            ${
+                application
+                ? `
+
+                    <div class="scheme-section">
+
+                        <h4>
+                            How to Apply
+                        </h4>
+
+                        <div class="scheme-content">
+                            ${application}
+                        </div>
+
+                    </div>
+
+                  `
+                : ""
+            }
+
+
+
+            <!-- =========================================
+                 DOCUMENTS
+            ========================================== -->
+
+            ${
+                documents
+                ? `
+
+                    <div class="scheme-section">
+
+                        <h4>
+                            📄 Documents Required
+                        </h4>
+
+                        <div class="scheme-content">
+                            ${documents}
+                        </div>
+
+                    </div>
+
+                  `
+                : ""
+            }
+
+
+
+            <!-- =========================================
+                 OFFICIAL LINK
+            ========================================== -->
+
+            <div class="scheme-footer">
+
+                <a
+                    href="${safeOfficialLink}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="official-button"
+                >
+                    Visit Official Website →
+                </a>
+
+            </div>
+
+
+        </article>
+
+    `;
+}
+
+
+
+/* ============================================================
+   SCHEME RESULTS
+============================================================ */
+
+function renderSchemeResults(items) {
+
+    if (
+        !Array.isArray(items) ||
+        items.length === 0
+    ) {
+
+        return `
+            <div class="no-results">
+
+                No sufficiently relevant schemes
+                were found in the current dataset.
+
+                Try adding a state, occupation,
+                education level, or specific requirement.
+
+            </div>
+        `;
+    }
+
+
+    return `
+
+        <div class="scheme-results">
+
+            ${items
+                .map(
+                    item =>
+                        renderSchemeCard(item)
+                )
+                .join("")
+            }
+
+        </div>
+
+    `;
+}
+
+
+
+/* ============================================================
+   HIDE WELCOME
+============================================================ */
+
+function hideWelcome() {
+
+    if (welcomeMessage) {
+
+        welcomeMessage.style.display =
+            "none";
+
+    }
+}
+
+
+
+/* ============================================================
+   SCROLL
+============================================================ */
+
+function scrollToBottom() {
+
+    setTimeout(() => {
+
+        chatBox.scrollTop =
+            chatBox.scrollHeight;
+
+    }, 50);
+}
+
+
+
+/* ============================================================
+   TYPING
+============================================================ */
+
+function showTyping() {
+
+    typingIndicator.style.display =
+        "flex";
+
+    scrollToBottom();
+}
+
+
+function hideTyping() {
+
+    typingIndicator.style.display =
+        "none";
+}
+
+
+
+/* ============================================================
+   SEND NORMAL CHAT
+============================================================ */
+
+async function sendMessage() {
+
+    const message =
+        messageInput.value.trim();
+
+
+    if (!message) {
+        return;
+    }
+
+
+    addUserMessage(message);
+
+
+    messageInput.value = "";
+
+    autoResizeTextarea();
+
+
+    showTyping();
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/chat",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        message: message
+                    })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        hideTyping();
+
+
+        addAssistantMessage(
+            data.reply || "",
+            data.items || []
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Chat error:",
+            error
+        );
+
+
+        hideTyping();
+
+
+        addAssistantMessage(
+            "I couldn't connect to the assistant right now. Please try again.",
+            []
+        );
+    }
+}
+
+
+
+/* ============================================================
+   SEND BUTTON
+============================================================ */
+
+sendBtn.addEventListener(
+    "click",
+    sendMessage
+);
+
+
+
+/* ============================================================
+   ENTER KEY
+============================================================ */
+
+messageInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            !event.shiftKey
+        ) {
+
+            event.preventDefault();
+
+            sendMessage();
+        }
+
+    }
+);
+
+
+
+/* ============================================================
+   TEXTAREA AUTO RESIZE
+============================================================ */
+
+messageInput.addEventListener(
+    "input",
+    autoResizeTextarea
+);
+
+
+function autoResizeTextarea() {
+
+    messageInput.style.height =
+        "auto";
+
+
+    messageInput.style.height =
+        Math.min(
+            messageInput.scrollHeight,
+            120
+        ) + "px";
+}
+
+
+
+/* ============================================================
+   QUICK BUTTONS
+============================================================ */
+
+document
+    .querySelectorAll(".quick-btn")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function() {
+
+                const query =
+                    this.dataset.query;
+
+
+                if (!query) {
+                    return;
+                }
+
+
+                messageInput.value =
+                    query;
+
+
+                autoResizeTextarea();
+
+
+                sendMessage();
+
+            }
+        );
+
+    });
+
+
+
+/* ============================================================
+   FIND SCHEMES FOR ME
+============================================================ */
+
+profileForm.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        const profile = {
+
+            state:
+                document
+                    .getElementById("state")
+                    .value
+                    .trim(),
+
+            education:
+                document
+                    .getElementById("education")
+                    .value
+                    .trim(),
+
+            occupation:
+                document
+                    .getElementById("occupation")
+                    .value
+                    .trim(),
+
+            category:
+                document
+                    .getElementById("category")
+                    .value
+                    .trim(),
+
+            income:
+                document
+                    .getElementById("income")
+                    .value
+                    .trim(),
+
+            age:
+                document
+                    .getElementById("age")
+                    .value
+                    .trim()
+
+        };
+
+
+        /*
+         * Do not force any particular profile.
+         * The user can enter farmer, student,
+         * woman, unemployed, senior citizen, etc.
+         */
+
+        const hasData =
+            Object.values(profile)
+                .some(
+                    value =>
+                        value !== ""
+                );
+
+
+        if (!hasData) {
+
+            alert(
+                "Please enter at least one detail."
+            );
+
+            return;
+        }
+
+
+        const readableProfile =
+            Object.entries(profile)
+                .filter(
+                    ([key, value]) =>
+                        value !== ""
+                )
+                .map(
+                    ([key, value]) =>
+                        `${key}: ${value}`
+                )
+                .join(", ");
+
+
+        addUserMessage(
+            "Find government schemes for me — " +
+            readableProfile
+        );
+
+
+        showTyping();
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/find-schemes",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                profile
+                            )
+
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            hideTyping();
+
+
+            addAssistantMessage(
+                data.reply || "",
+                data.items || []
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Find schemes error:",
+                error
+            );
+
+
+            hideTyping();
+
+
+            addAssistantMessage(
+                "I couldn't search for schemes right now. Please try again.",
+                []
+            );
+
+        }
+
+    }
+);
+
+
+
+/* ============================================================
+   CLEAR CHAT
+============================================================ */
+
+clearChatBtn.addEventListener(
+    "click",
+    async function() {
+
+        chatBox.innerHTML = "";
+
+
+        chatBox.appendChild(
+            createWelcomeMessage()
+        );
+
+
+        try {
+
+            await fetch(
+                "/clear",
+                {
+                    method: "POST"
+                }
+            );
+
+        } catch (error) {
+
+            console.log(
+                "Clear request failed:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+
+/* ============================================================
+   CREATE WELCOME MESSAGE
+============================================================ */
+
+function createWelcomeMessage() {
+
+    const div =
+        document.createElement("div");
+
+
+    div.className =
+        "welcome-message";
+
+
+    div.innerHTML = `
+
+        <div class="welcome-icon">
+            🤖
+        </div>
+
+        <h2>
+            How can I help you?
+        </h2>
+
+        <p>
+            Ask me about government scholarships,
+            jobs, welfare schemes, farmer support,
+            women welfare, health schemes and
+            other government programs.
+        </p>
+
+    `;
+
+
+    return div;
+}
+
+
+
+/* ============================================================
+   VOICE INPUT
+============================================================ */
+
+let recognition = null;
+
+let isListening = false;
+
+
+if (
+    "webkitSpeechRecognition" in window ||
+    "SpeechRecognition" in window
+) {
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+
+    recognition =
+        new SpeechRecognition();
+
+
+    recognition.lang =
+        "en-IN";
+
+
+    recognition.continuous =
+        false;
+
+
+    recognition.interimResults =
+        false;
+
+
+    recognition.onstart =
+        function() {
+
+            isListening = true;
+
+            voiceBtn.classList.add(
+                "voice-active"
+            );
+
+            voiceBtn.textContent =
+                "⏹️";
+        };
+
+
+    recognition.onresult =
+        function(event) {
+
+            const transcript =
+                event
+                    .results[0][0]
+                    .transcript;
+
+
+            messageInput.value =
+                transcript;
+
+
+            autoResizeTextarea();
+
+        };
+
+
+    recognition.onerror =
+        function(event) {
+
+            console.error(
+                "Voice recognition error:",
+                event.error
+            );
+
+        };
+
+
+    recognition.onend =
+        function() {
+
+            isListening = false;
+
+            voiceBtn.classList.remove(
+                "voice-active"
+            );
+
+            voiceBtn.textContent =
+                "🎤";
+        };
+
+
+    voiceBtn.addEventListener(
+        "click",
+        function() {
+
+            if (isListening) {
+
+                recognition.stop();
+
+                return;
+            }
+
+
+            try {
+
+                recognition.start();
+
+            } catch (error) {
+
+                console.error(
+                    "Voice start error:",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+} else {
+
+    voiceBtn.addEventListener(
+        "click",
+        function() {
+
+            alert(
+                "Voice input is not supported by this browser. Please use a recent Chrome or Edge browser."
+            );
+
+        }
+    );
+
+}
+
+
+
+/* ============================================================
+   INITIAL STATE
+============================================================ */
+
+hideTyping();
+
+
+</script>
+
+
+</body>
+</html>

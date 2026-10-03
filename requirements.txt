@@ -1,0 +1,6 @@
+Flask
+openai
+python-dotenv
+groq
+sentence-transformers
+faiss-cpu
